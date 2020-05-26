@@ -36,19 +36,10 @@
       </van-row>
       <van-panel>
         <template #header>
-          <p>-活动推荐-</p>
+          <p style="text-align: center">-活动推荐-</p>
         </template>
         <template #default>
-          <div v-for="(activity, index) in activities" :key="index">
-            <van-image :src="activity.image"></van-image>
-            <p class="name van-ellipsis">{{activity.name}}</p>
-            <van-row type="flex" justify="end">
-              <van-col>
-                <span class="time">{{activity.time}}</span>
-                <van-tag round type="warning">{{activity.status | activityStatus}}</van-tag>
-              </van-col>
-            </van-row>
-          </div>
+          <activity-card :activities="activities"></activity-card>
         </template>
       </van-panel>
     </van-pull-refresh>
@@ -56,11 +47,8 @@
 </template>
 
 <script>
-import { NavBar, Icon, PullRefresh, Swipe, SwipeItem, Image, Grid, GridItem, Toast, Row, Col, Panel, Tag } from 'vant'
-const activityStatus = [
-  { status: 1, text: '报名中' },
-  { status: 2, text: '活动结束' }
-]
+import { NavBar, Icon, PullRefresh, Swipe, SwipeItem, Image, Grid, GridItem, Toast, Row, Col, Panel } from 'vant'
+import ActivityCard from '../components/ActivityCard'
 export default {
   name: 'Home',
   components: {
@@ -75,12 +63,7 @@ export default {
     [Row.name]: Row,
     [Col.name]: Col,
     [Panel.name]: Panel,
-    [Tag.name]: Tag
-  },
-  filters: {
-    activityStatus: function (value) {
-      return activityStatus.filter(item => item.status === value).shift().text
-    }
+    ActivityCard
   },
   data () {
     return {
