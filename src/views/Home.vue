@@ -15,7 +15,7 @@
         </van-swipe-item>
       </van-swipe>
       <van-grid :column-num="5" >
-        <van-grid-item v-for="(menu, index) in menus" :key="index" :icon="menu.image" :text="menu.text" />
+        <van-grid-item @click="dianji(index)" v-for="(menu, index) in menus" :key="index" :icon="menu.image" :text="menu.text" />
       </van-grid>
       <van-swipe :autoplay="3000" style="height: 60px;" vertical :show-indicators="false">
         <van-swipe-item v-for="(notice, index) in notices" :key="index">
@@ -49,6 +49,7 @@
 <script>
 import { NavBar, Icon, PullRefresh, Swipe, SwipeItem, Image, Grid, GridItem, Toast, Row, Col, Panel } from 'vant'
 import ActivityCard from '../components/ActivityCard'
+import { listMenus } from '../api/service'
 export default {
   name: 'Home',
   components: {
@@ -131,6 +132,11 @@ export default {
     }
   },
   methods: {
+    init () {
+      listMenus().then(res => {
+        console.log(res.data)
+      })
+    },
     onRefresh () {
       setTimeout(() => {
         Toast('刷新成功')

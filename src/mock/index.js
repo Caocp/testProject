@@ -5,6 +5,7 @@
 console.log('[antd-pro] mock mounting')
 const Mock = require('mockjs2')
 require('./services/activity')
+require('./services/service')
 Mock.setup({
   timeout: 800 // setter delay time
 })

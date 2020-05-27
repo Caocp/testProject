@@ -1,8 +1,8 @@
 import request from '@/utils/request'
 
-export function getHome () {
+export function listMenus () {
   return request({
-    url: '/home',
+    url: '/service/menus',
     method: 'get'
   })
 }
