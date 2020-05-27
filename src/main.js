@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import { Lazyload } from 'vant'
 
+import './mock'
+
 Vue.use(Lazyload)
 Vue.config.productionTip = false
 

@@ -33,10 +33,10 @@
       <van-cell-group>
         <van-cell title="我参加的活动" :icon="require('@/assets/favor.png')" is-link />
         <van-cell title="我申请的服务" :icon="require('@/assets/tag.png')" is-link />
-        <van-cell title="我的服务评价" :icon="require('@/assets/tag.png')" is-link />
+        <van-cell title="我的服务评价" :icon="require('@/assets/comment.png')" is-link />
         <van-cell title="我的资料" :icon="require('@/assets/material.png')" is-link />
         <van-cell title="我的小智" :icon="require('@/assets/message.png')" is-link />
-        <van-cell title="通知管理" :icon="require('@/assets/message.png')" is-link />
+        <van-cell title="通知管理" :icon="require('@/assets/mail.png')" is-link />
         <van-cell title="设置" :icon="require('@/assets/setting.png')" is-link />
       </van-cell-group>
     </div>

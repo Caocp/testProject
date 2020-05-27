@@ -67,6 +67,7 @@ export default {
   },
   data () {
     return {
+      refreshing: false,
       isLoading: false,
       images: [
         'https://www.hispsp.com/static/uploads/images/20200228/20200228163658519.png',

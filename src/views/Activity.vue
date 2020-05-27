@@ -4,23 +4,30 @@
       title="活动，缤纷乐e"
     >
     </van-nav-bar>
-    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-      <div class="container">
-        <activity-card :activities="activities"></activity-card>
-      </div>
+    <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+      <van-list v-model="listLoading"
+                 :finished="listFinished"
+                 finished-text="没有更多了"
+                 @load="onLoad">
+        <div class="container">
+          <activity-card :activities="activities"></activity-card>
+        </div>
+      </van-list>
     </van-pull-refresh>
   </div>
 </template>
 
 <script>
-import { NavBar, Icon, PullRefresh, Swipe, SwipeItem, Image, Toast } from 'vant'
-import ActivityCard from '../components/ActivityCard'
+import { NavBar, Icon, PullRefresh, List, Swipe, SwipeItem, Image, Toast } from 'vant'
+import ActivityCard from '@/components/ActivityCard'
+import { listActivities } from '../api/activity'
 export default {
   name: 'Activity',
   components: {
     [NavBar.name]: NavBar,
     [Icon.name]: Icon,
     [PullRefresh.name]: PullRefresh,
+    [List.name]: List,
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     [Image.name]: Image,
@@ -28,36 +35,36 @@ export default {
   },
   data () {
     return {
-      isLoading: false,
-      activities: [{
-        name: '汇智健身中心—挑战减脂赢半年卡',
-        image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
-        time: '2020/04/16',
-        status: 1
-      }, {
-        name: '乐活汇-笔尖缤纷绘画社   2020敬请期待哟！',
-        image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
-        time: '2020/06/10',
-        status: 1
-      }, {
-        name: '活动报名 | 浦东新区专利快速审查及维权培训会',
-        image: 'https://www.hispsp.com/static/uploads/images/20191120/20191120101721612.jpg',
-        time: '2020/04/16',
-        status: 2
-      }, {
-        name: '第四餐厅-东南亚风情美食节邀您来品尝',
-        image: 'https://www.hispsp.com/static/uploads/images/20191202/20191202104313967.jpg',
-        time: '2020/06/10',
-        status: 1
-      }]
+      refreshing: false,
+      listLoading: false,
+      listFinished: false,
+      page: 1,
+      pageSize: 5,
+      activities: []
     }
   },
   methods: {
-    onRefresh () {
-      setTimeout(() => {
-        Toast('刷新成功')
-        this.isLoading = false
-      }, 1000)
+    async onLoad () {
+      if (this.refreshing) {
+        this.activities = []
+        this.refreshing = false
+      }
+      if (this.listFinished) {
+        return
+      }
+      await listActivities({ page: this.page, pageSize: this.pageSize }).then(res => {
+        this.activities = this.activities.concat(res.data.data)
+        this.page = res.data.pageNum + 1
+        this.listFinished = !res.data.hasNextPage
+      })
+      this.listLoading = false
+    },
+    async onRefresh () {
+      this.listFinished = false
+      this.listLoading = true
+      this.page = 1
+      await this.onLoad()
+      Toast('刷新成功')
     }
   }
 }

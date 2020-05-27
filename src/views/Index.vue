@@ -4,7 +4,7 @@
     <service v-if="active === 'service'"></service>
     <activity v-if="active === 'activity'"></activity>
     <me v-if="active === 'me'"></me>
-    <van-tabbar v-model="active" active-color="blue" inactive-color="#ccc">
+    <van-tabbar v-model="active" active-color="#004897" inactive-color="#C3C3C3">
       <van-tabbar-item name="home" icon="wap-home">首页</van-tabbar-item>
       <van-tabbar-item name="service" icon="service">服务</van-tabbar-item>
       <van-tabbar-item name="activity" icon="friends">活动</van-tabbar-item>
