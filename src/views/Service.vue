@@ -14,7 +14,7 @@
 
 <script>
 import { NavBar, Panel, Grid, GridItem, Image } from 'vant'
-import { menus } from '@/api/service'
+import { listMenus } from '@/api/service'
 
 export default {
   name: 'Home',
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     initData () {
-      menus().then(res => {
+      listMenus().then(res => {
         this.menus = res.data
       })
     }
