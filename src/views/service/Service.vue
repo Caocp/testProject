@@ -33,6 +33,9 @@ export default {
   created () {
     this.initData()
   },
+  activated () {
+    this.$store.commit('SET_ACTIVE_TABBAR', 'service')
+  },
   methods: {
     initData () {
       listMenus().then(res => {

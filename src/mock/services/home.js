@@ -50,3 +50,39 @@ const notices = [{
   title: '关于第六餐厅开放堂食的通知',
   text: '<p><strong>关于第六餐厅开放堂食的通知</strong></p>'
 }]
+const navigateImages = ['https://www.hispsp.com/static/uploads/images/20191209/20191209162954973.png', 'https://www.hispsp.com/static/uploads/images/20191209/20191209163058146.png', 'https://www.hispsp.com/static/uploads/images/20191209/20191209163026563.png']
+
+const activities = [{
+  name: '汇智健身中心—挑战减脂赢半年卡',
+  image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
+  time: '2020/04/16',
+  status: 1
+}, {
+  name: '乐活汇-笔尖缤纷绘画社   2020敬请期待哟！',
+  image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
+  time: '2020/06/10',
+  status: 1
+}]
+
+const home = () => {
+  return builder([{
+    type: 'Banner',
+    data: {
+      items: slideShows
+    }
+  }, {
+    type: 'SecondaryMenu',
+    data: { items: secondaryMenus }
+  }, {
+    type: 'Notice',
+    data: { items: notices }
+  }, {
+    type: 'NavigateImage',
+    data: { items: navigateImages }
+  }, {
+    type: 'Activity',
+    data: { title: '活动推荐', items: activities }
+  }])
+}
+
+Mock.mock(/\/api\/home/, home)

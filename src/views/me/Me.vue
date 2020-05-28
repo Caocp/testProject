@@ -64,6 +64,9 @@ export default {
         'https://img.yzcdn.cn/vant/apple-2.jpg'
       ]
     }
+  },
+  activated () {
+    this.$store.commit('SET_ACTIVE_TABBAR', 'me')
   }
 }
 </script>

@@ -19,8 +19,8 @@
 
 <script>
 import { NavBar, Icon, PullRefresh, List, Swipe, SwipeItem, Image, Toast } from 'vant'
-import ActivityCard from '@/components/ActivityCard'
-import { listActivities } from '../api/activity'
+import ActivityCard from '../components/Activity/ActivityCard'
+import { listActivities } from '../../api/activity'
 export default {
   name: 'Activity',
   components: {
@@ -42,6 +42,9 @@ export default {
       pageSize: 5,
       activities: []
     }
+  },
+  activated () {
+    this.$store.commit('SET_ACTIVE_TABBAR', 'activity')
   },
   methods: {
     async onLoad () {
