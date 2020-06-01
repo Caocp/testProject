@@ -7,6 +7,7 @@ const Mock = require('mockjs2')
 require('./services/activity')
 require('./services/service')
 require('./services/home')
+require('./services/auth')
 Mock.setup({
   timeout: 800 // setter delay time
 })
