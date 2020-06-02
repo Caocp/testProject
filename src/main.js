@@ -5,6 +5,7 @@ import store from './store'
 import { Lazyload } from 'vant'
 
 import './mock'
+import './permission' // permission control
 
 Vue.use(Lazyload)
 Vue.config.productionTip = false

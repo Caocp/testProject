@@ -23,4 +23,11 @@ const login = (options) => {
   }, '', 200, { 'Custom-Header': Mock.mock('@guid') })
 }
 
+const logout = (options) => {
+  const body = getBody(options)
+  console.log('mock: body', body)
+  return builder({}, '注销成功', 200)
+}
+
 Mock.mock(/\/api\/login/, login)
+Mock.mock(/\/api\/logout/, logout)

@@ -24,7 +24,7 @@ const routes = [
       meta: { title: '服务' }
     }, {
       path: 'activity',
-      name: 'activity',
+      name: 'Activity',
       component: () => import('@/views/activity/Activity'),
       meta: { title: '活动' }
     }, {

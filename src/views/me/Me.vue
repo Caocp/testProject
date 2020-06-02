@@ -9,7 +9,7 @@
         <van-image :height="30" :width="40" fit="contain" :src="require('@/assets/integral.png')"/><p class="sign">积分签到</p>
       </van-row>
       <van-row type="flex" align="center">
-        <van-image class="avatar" :height="100" :width="100" fit="contain" :src="require('@/assets/avatar.png')"/><p class="name">姓名</p>
+        <van-image class="avatar" round :height="100" :width="100" :src="userInfo.avatar"/><p class="name">{{userInfo.name}}</p>
       </van-row>
       <van-grid :column-num="3">
         <van-grid-item text="我的积分">
@@ -59,10 +59,11 @@ export default {
   },
   data () {
     return {
-      images: [
-        'https://img.yzcdn.cn/vant/cat.jpeg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg'
-      ]
+    }
+  },
+  computed: {
+    userInfo () {
+      return this.$store.getters.userInfo
     }
   },
   activated () {

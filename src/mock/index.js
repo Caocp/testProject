@@ -8,6 +8,7 @@ require('./services/activity')
 require('./services/service')
 require('./services/home')
 require('./services/auth')
+require('./services/user')
 Mock.setup({
   timeout: 800 // setter delay time
 })
