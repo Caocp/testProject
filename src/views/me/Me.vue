@@ -9,7 +9,7 @@
         <van-image :height="30" :width="40" fit="contain" :src="require('@/assets/integral.png')"/><p class="sign">积分签到</p>
       </van-row>
       <van-row type="flex" align="center">
-        <van-image class="avatar" :height="100" :width="100" fit="contain" :src="require('@/assets/avatar.png')"/><p class="name">姓名</p>
+        <van-image class="avatar" round :height="100" :width="100" :src="userInfo.avatar"/><p class="name">{{userInfo.name}}</p>
       </van-row>
       <van-grid :column-num="3">
         <van-grid-item text="我的积分">
@@ -33,10 +33,10 @@
       <van-cell-group>
         <van-cell title="我参加的活动" :icon="require('@/assets/favor.png')" is-link />
         <van-cell title="我申请的服务" :icon="require('@/assets/tag.png')" is-link />
-        <van-cell title="我的服务评价" :icon="require('@/assets/tag.png')" is-link />
+        <van-cell title="我的服务评价" :icon="require('@/assets/comment.png')" is-link />
         <van-cell title="我的资料" :icon="require('@/assets/material.png')" is-link />
         <van-cell title="我的小智" :icon="require('@/assets/message.png')" is-link />
-        <van-cell title="通知管理" :icon="require('@/assets/message.png')" is-link />
+        <van-cell title="通知管理" :icon="require('@/assets/mail.png')" is-link />
         <van-cell title="设置" :icon="require('@/assets/setting.png')" is-link />
       </van-cell-group>
     </div>
@@ -59,11 +59,15 @@ export default {
   },
   data () {
     return {
-      images: [
-        'https://img.yzcdn.cn/vant/cat.jpeg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg'
-      ]
     }
+  },
+  computed: {
+    userInfo () {
+      return this.$store.getters.userInfo
+    }
+  },
+  activated () {
+    this.$store.commit('SET_ACTIVE_TABBAR', 'me')
   }
 }
 </script>
