@@ -1,9 +1,19 @@
 <template>
   <div class="home">
     <van-nav-bar
-      title="汇智e站"
-      left-text="张江园"
+      title="测试网站"
+      left-text=""
     >
+      <template #left>
+        <div  @click="tochangepark()">
+          <span>张江园</span>
+          <img style="display:inline-block;width:0.5rem;height:0.8rem" src='../../assets/parklogos.png' alt="" />
+        </div>
+      </template>
+      <template #content>
+        <span>测试网站</span>
+        <van-icon name="envelop-o" />
+      </template>
       <template #right>
         <van-icon name="envelop-o" />
       </template>
@@ -57,6 +67,9 @@ export default {
     this.$store.commit('SET_ACTIVE_TABBAR', 'home')
   },
   methods: {
+    tochangepark () {
+      window.location.href = '#/ParkSelection'
+    },
     async init () {
       await getHome().then(res => {
         console.log(res.data)

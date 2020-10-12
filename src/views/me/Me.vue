@@ -17,7 +17,7 @@
             <p>11</p>
           </template>
         </van-grid-item>
-        <van-grid-item text="汇智卡">
+        <van-grid-item text="测试卡">
           <template #icon>
             <p>未绑定</p>
           </template>

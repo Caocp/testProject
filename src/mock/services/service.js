@@ -4,7 +4,7 @@ const serviceMenuData = [
   {
     title: '基础生活服务',
     items: [{
-      name: '汇智健身中心',
+      name: '健身中心',
       icon: 'https://www.hispsp.com/static/uploads/images/20191008/20191008163509541.png'
     }, {
       name: '充值',

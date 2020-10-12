@@ -3,13 +3,13 @@ import { builder, getQueryParameters } from '../util'
 
 const activities = [{
   id: Mock.mock('@guid'),
-  name: '汇智健身中心—挑战减脂赢半年卡',
+  name: '健身中心—挑战减脂赢半年卡',
   image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
   time: '2020/04/16',
   status: 1
 }, {
   id: Mock.mock('@guid'),
-  name: '乐活汇-笔尖缤纷绘画社   2020敬请期待哟！',
+  name: '乐活-笔尖缤纷绘画社   2020敬请期待哟！',
   image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
   time: '2020/06/10',
   status: 1
@@ -69,7 +69,7 @@ const activities = [{
   status: 2
 }, {
   id: Mock.mock('@guid'),
-  name: '汇智e站服务需求有奖调研',
+  name: '服务需求有奖调研',
   image: 'https://www.hispsp.com/static/uploads/images/20161222/20161222170520408.png',
   time: '2017/03/09',
   status: 1
