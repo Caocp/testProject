@@ -10,10 +10,6 @@
           <img style="display:inline-block;width:0.5rem;height:0.8rem" src='../../assets/parklogos.png' alt="" />
         </div>
       </template>
-      <template #content>
-        <span>测试网站</span>
-        <van-icon name="envelop-o" />
-      </template>
       <template #right>
         <van-icon name="envelop-o" />
       </template>
