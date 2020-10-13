@@ -39,6 +39,12 @@ const routes = [
     name: 'Login',
     component: () => import('@/views/login/Login'),
     meta: { title: '登录' }
+  },
+  {
+    path: '/ParkSelection',
+    name: 'ParkSelection',
+    component: () => import('@/views/home/ParkSelection'),
+    meta: { title: '园区选择' }
   }
 ]
 

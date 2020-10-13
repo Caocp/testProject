@@ -5,7 +5,7 @@ import { setDocumentTitle } from '@/utils/domUtil'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
 import { Toast } from 'vant'
 
-const whiteList = ['Login', 'Home', 'Activity', 'Service']
+const whiteList = ['Login', 'Home', 'Activity', 'Service', 'ParkSelection']
 const loginRoutePath = '/login'
 const defaultRoutePath = '/home'
 

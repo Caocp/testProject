@@ -5,7 +5,7 @@
       left-text=""
     >
       <template #left>
-        <div  @click="tochangepark()">
+        <div  @click="tochangepark">
           <span>张江园</span>
           <img style="display:inline-block;width:0.5rem;height:0.8rem" src='../../assets/parklogos.png' alt="" />
         </div>

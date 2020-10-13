@@ -9,6 +9,7 @@ require('./services/service')
 require('./services/home')
 require('./services/auth')
 require('./services/user')
+require('./services/park')
 Mock.setup({
   timeout: 800 // setter delay time
 })
