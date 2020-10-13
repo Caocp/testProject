@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card" v-for="(activity, index) in activities" :key="index">
+    <div class="card" v-for="(activity, index) in activities" :key="index" @click="activityDetail(activity)">
       <van-image :src="activity.image"></van-image>
       <p class="name van-ellipsis">{{activity.name}}</p>
       <van-row type="flex" justify="end" align="center">
@@ -33,6 +33,12 @@ export default {
   props: {
     activities: {
       type: Array
+    }
+  },
+  methods: {
+    activityDetail (item) {
+      console.log(item)
+      window.location.href = '#/ActivityDetail'
     }
   }
 }

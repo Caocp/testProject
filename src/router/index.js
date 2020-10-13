@@ -45,6 +45,12 @@ const routes = [
     name: 'ParkSelection',
     component: () => import('@/views/home/ParkSelection'),
     meta: { title: '园区选择' }
+  },
+  {
+    path: '/ActivityDetail',
+    name: 'ActivityDetail',
+    component: () => import('@/views/components/Activity/ActivityDetail'),
+    meta: { title: '活动详情' }
   }
 ]
 
