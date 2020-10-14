@@ -5,13 +5,17 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 import router from './router'
 import store from './store'
-import { Lazyload } from 'vant'
+import { Lazyload, DropdownMenu, DropdownItem, Collapse, CollapseItem } from 'vant'
 
 import './mock'
 import './permission' // permission control
 Vue.component(Button.name, Button);
 Vue.use(Lazyload)
 Vue.use(Antd)
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
 Vue.config.productionTip = false
 
 new Vue({

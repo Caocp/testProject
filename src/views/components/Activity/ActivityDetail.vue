@@ -6,7 +6,8 @@
         </van-nav-bar>
         <img src='../../../assets/logo.png' alt=""  />
         <p class="name van-ellipsis">活动名称</p>
-        <van-row type="flex" justify="end" align="left">
+        <van-collapse v-model="activeNames">
+          <van-collapse-item title="报名时间" name="1">
             <p class="time">报名时间：2020-10-13</p>
             <p class="time">报名人数：不限</p>
             <p class="time">活动费用：免费</p>
@@ -15,7 +16,8 @@
             <p class="time">活动结束时间：2020-10-14</p>
             <p class="time">发起人：张三</p>
             <p class="time">报名截止时间：2020-10-14</p>
-        </van-row>
+          </van-collapse-item>
+        </van-collapse>
         <van-row type="flex" justify="end" align="left">
             <p class="time">活动内容</p>
         </van-row>
@@ -23,8 +25,28 @@
 </template>
 
 <script>
+import { activityData } from '../../../api/activityDetail'
 export default {
-    
+    data () {
+      return {
+        id:null,
+        result:{},
+        activeNames: ['1'],
+      }
+    },
+    created (){
+      this.id = this.$route.query.id
+        console.log(this.id)
+      this.initData(this.id)
+    },
+    methods :{
+      initData (id) {
+        activityData(id).then(res => {
+          console.log(res.data)
+          // this.result = res.data
+        })
+    },
+    }
 }
 </script>
 

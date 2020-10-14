@@ -53,11 +53,13 @@ const notices = [{
 const navigateImages = ['https://www.hispsp.com/static/uploads/images/20191209/20191209162954973.png', 'https://www.hispsp.com/static/uploads/images/20191209/20191209163058146.png', 'https://www.hispsp.com/static/uploads/images/20191209/20191209163026563.png']
 
 const activities = [{
+  id: 1,
   name: '健身中心—挑战减脂赢半年卡',
   image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
   time: '2020/04/16',
   status: 1
 }, {
+  id: 2,
   name: '乐活-笔尖缤纷绘画社   2020敬请期待哟！',
   image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
   time: '2020/06/10',

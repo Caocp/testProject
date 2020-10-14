@@ -37,8 +37,12 @@ export default {
   },
   methods: {
     activityDetail (item) {
-      console.log(item)
-      window.location.href = '#/ActivityDetail'
+      this.$router.push({
+        path:'ActivityDetail',
+        query:{
+          id:item.id
+        }
+      })
     }
   }
 }

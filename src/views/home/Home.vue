@@ -3,12 +3,12 @@
     <van-nav-bar
       title="测试网站"
       left-text=""
+      style="position: fixed;width: 100%;"
     >
       <template #left>
-        <div  @click="tochangepark">
-          <span>张江园</span>
-          <img style="display:inline-block;width:0.5rem;height:0.8rem" src='../../assets/parklogos.png' alt="" />
-        </div>
+        <van-dropdown-menu style="box-shadow:none;background:none;">
+          <van-dropdown-item v-model="id" :options="option1" style="box-shadow:none;background:none;" />
+        </van-dropdown-menu>
       </template>
       <template #right>
         <van-icon name="envelop-o" />
@@ -25,6 +25,7 @@
 <script>
 import { NavBar, Icon, PullRefresh, Toast } from 'vant'
 import { getHome } from '../../api/home'
+import { parkDate } from '../../api/park'
 const modules = {
   Banner: 'Banner',
   SecondaryMenu: 'SecondaryMenu',
@@ -48,7 +49,9 @@ export default {
     return {
       refreshing: false,
       isLoading: false,
-      modules: []
+      modules: [],
+      id: 3,
+      option1: [],
     }
   },
   filters: {
@@ -58,13 +61,16 @@ export default {
   },
   created () {
     this.init()
+    this.initData()
   },
   activated () {
     this.$store.commit('SET_ACTIVE_TABBAR', 'home')
   },
   methods: {
-    tochangepark () {
-      window.location.href = '#/ParkSelection'
+    initData () {
+      parkDate().then(res => {
+        this.option1 = res.data
+      })
     },
     async init () {
       await getHome().then(res => {

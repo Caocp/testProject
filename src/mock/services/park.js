@@ -3,12 +3,12 @@ import { builder } from '../util'
 
 const parkDate = [
     {
-    id:3,
-    name:'张江园'
+        value:3,
+        text:'张江园'
     },
     {
-        id:4,
-        name:'三林园'
+        value:4,
+        text:'三林园'
     },
 ]
 

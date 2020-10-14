@@ -2,19 +2,19 @@ import Mock from 'mockjs2'
 import { builder, getQueryParameters } from '../util'
 
 const activities = [{
-  id: Mock.mock('@guid'),
+  id: 1,
   name: '健身中心—挑战减脂赢半年卡',
   image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
   time: '2020/04/16',
   status: 1
 }, {
-  id: Mock.mock('@guid'),
+  id: 2,
   name: '乐活-笔尖缤纷绘画社   2020敬请期待哟！',
   image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
   time: '2020/06/10',
   status: 1
 }, {
-  id: Mock.mock('@guid'),
+  id: 3,
   name: '活动报名 | 浦东新区专利快速审查及维权培训会',
   image: 'https://www.hispsp.com/static/uploads/images/20191120/20191120101721612.jpg',
   time: '2020/04/16',
@@ -26,7 +26,7 @@ const activities = [{
   time: '2020/06/10',
   status: 1
 }, {
-  id: Mock.mock('@guid'),
+  id: 4,
   name: '2017浦软园区运动季谁“羽”争锋',
   image: 'https://www.hispsp.com/static/uploads/images/20170401/20170401091909625.jpg',
   time: '2017/04/01',
