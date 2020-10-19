@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { activityData } from '../../../api/activityDetail'
+import { activityDate } from '../../../api/activity'
 export default {
     data () {
       return {
@@ -36,12 +36,12 @@ export default {
     },
     created (){
       this.id = this.$route.query.id
-        console.log(this.id)
+      console.log(this.id)
       this.initData(this.id)
     },
     methods :{
       initData (id) {
-        activityData(id).then(res => {
+        activityDate(id).then(res => {
           console.log(res.data)
           // this.result = res.data
         })

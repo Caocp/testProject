@@ -7,7 +7,7 @@
     >
       <template #left>
         <van-dropdown-menu style="box-shadow:none;background:none;">
-          <van-dropdown-item v-model="id" :options="option1" style="box-shadow:none;background:none;" />
+          <van-dropdown-item v-model="id" :options="option1" style="box-shadow:none;background:none;" @change='parkSelect' />
         </van-dropdown-menu>
       </template>
       <template #right>
@@ -50,7 +50,7 @@ export default {
       refreshing: false,
       isLoading: false,
       modules: [],
-      id: 3,
+      id: '',
       option1: [],
     }
   },
@@ -62,11 +62,22 @@ export default {
   created () {
     this.init()
     this.initData()
+    if(this.$store.getters.parkStore){
+      this.id = this.$store.getters.parkStore ? this.$store.getters.parkStore : storage.get('park_store')
+    }else{
+      this.id = 3
+    }
+    
   },
   activated () {
     this.$store.commit('SET_ACTIVE_TABBAR', 'home')
+    this.$store.commit('SET_PARK_STORE',this.id)
   },
   methods: {
+    parkSelect (value) {
+      this.id = value
+      this.$store.commit('SET_PARK_STORE', value)
+    },
     initData () {
       parkDate().then(res => {
         this.option1 = res.data

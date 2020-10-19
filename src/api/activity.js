@@ -14,3 +14,13 @@ export function findActivityDetail (id) {
     method: 'get'
   })
 }
+
+
+export function activityDate (params) {
+  return request({
+    url: '/activityDetail',
+    method: 'post',
+    data:params
+  })
+}
+

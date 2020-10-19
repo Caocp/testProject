@@ -20,5 +20,5 @@ const activity = () => {
     return builder(activityDetail, '成功', 200)
   }
   
-  Mock.mock(/\/api\/activityDetail/, activity)
+  Mock.mock(/\/api\/activity/, activity)
 
