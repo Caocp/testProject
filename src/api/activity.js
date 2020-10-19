@@ -8,6 +8,9 @@ export function listActivities (parameter) {
   })
 }
 
+
+
+
 export function findActivityDetail (id) {
   return request({
     url: `/activities/${id}`,
