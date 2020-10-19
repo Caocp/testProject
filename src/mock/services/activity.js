@@ -102,4 +102,41 @@ const listActivities = (options) => {
   return builder(pageInfo)
 }
 
+const activityDetailList = [
+  {
+    id: "1",
+    name: '22222222222222',
+    image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
+    time: '2020/06/10',
+    status: 1,
+    startTime: "2020/06/29 12:00:00",
+    startTime2: "2020/12/31 23:55:00",
+    canSignUpNum: "不限",
+    cost: "免费",
+    initiator: "杨婷",
+    },
+    {
+      id: "2",
+      name: '乐活-笔尖缤纷绘画社   2020敬请期待哟！',
+      image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
+      time: '2020/06/10',
+      status: 1,
+      startTime: "2020/06/29 12:00:00",
+      startTime2: "2020/12/31 23:55:00",
+      canSignUpNum: "不限",
+      cost: "免费",
+      initiator: "杨婷",
+      }
+]
+    
+    
+
+const activity = (options) => {
+    const parameters = getQueryParameters(options)
+    console.log('queryParameters', parameters)
+    const currentActivityDetail = activityDetailList.filter(item => item.id === parameters.id).shift()
+    return builder(currentActivityDetail, '成功', 200);
+  }
+  
+Mock.mock(/\/api\/activityDetail/, 'get', activity)
 Mock.mock(/\/api\/activities/, 'get', listActivities)

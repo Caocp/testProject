@@ -19,8 +19,8 @@ export function findActivityDetail (id) {
 export function activityDate (params) {
   return request({
     url: '/activityDetail',
-    method: 'post',
-    data:params
+    method: 'get',
+    params: params
   })
 }
 

@@ -41,7 +41,10 @@ export default {
     },
     methods :{
       initData (id) {
-        activityDate(id).then(res => {
+        const params = {
+          id: id
+        }
+        activityDate(params).then(res => {
           console.log(res.data)
           // this.result = res.data
         })
