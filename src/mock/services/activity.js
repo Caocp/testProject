@@ -2,7 +2,7 @@ import Mock from 'mockjs2'
 import { builder, getQueryParameters } from '../util'
 
 const activities = [{
-  id: 1,
+  id: '1',
   name: '健身中心—挑战减脂赢半年卡',
   image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
   time: '2020/04/16',
@@ -14,7 +14,7 @@ const activities = [{
   initiator: "杨婷",
   richText: '<p><img alt="" src="https://www.hispsp.com/static/uploads/images/20191218/20191218100351337.jpg" style="height:200px; width:98%" /></p><p><span style="color:#FF0000"><span style="font-size:20px"><strong>绘画社将在2020年中旬开课。具体开班时间及课程费用会在报名时公布，尽情期待。。。</strong></span></span></p>'
 }, {
-  id: 2,
+  id: '2',
   name: '乐活-笔尖缤纷绘画社   2020敬请期待哟！',
   image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
   time: '2020/06/10',
@@ -26,7 +26,7 @@ const activities = [{
   initiator: "杨婷",
   richText: '是利用市级财政科技资金，支持企业、团队向服务机构购买专业服务（战略规划、技术研发、技术转移、检验检测、人才培养、资源开放等）的一种政策工具'
 }, {
-  id: 3,
+  id: '3',
   name: '活动报名 | 浦东新区专利快速审查及维权培训会',
   image: 'https://www.hispsp.com/static/uploads/images/20191120/20191120101721612.jpg',
   time: '2020/04/16',
@@ -174,28 +174,13 @@ const listActivities = (options) => {
   return builder(pageInfo)
 }
 
-
-const activityDetail = 
-    {
-    id: 2,
-    name: '乐活-笔尖缤纷绘画社   2020敬请期待哟！',
-    image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
-    time: '2020/06/10',
-    status: 1,
-    startTime: "2020/06/29 12:00:00",
-    startTime2: "2020/12/31 23:55:00",
-    canSignUpNum: "不限",
-    cost: "免费",
-    initiator: "杨婷",
-    richText: '<p><img alt="" src="https://www.hispsp.com/static/uploads/images/20191218/20191218100351337.jpg" style="width:100%;" /></p><p><span style="color:#FF0000"><span style="font-size:20px"><strong>绘画社将在2020年中旬开课。具体开班时间及课程费用会在报名时公布，尽情期待。。。</strong></span></span></p>'
-    }
-    
-
-const activity = () => {
-    return builder(activityDetail, '成功', 200)
+const activity = (options) => {
+    const parameters = getQueryParameters(options)
+    console.log('queryParameters', parameters)
+    const currentActivityDetail = activities.filter(item => item.id === parameters.id).shift()
+    return builder(currentActivityDetail, '成功', 200);
   }
   
-
-  Mock.mock(/\/api\/activityDetail/, activity)
+Mock.mock(/\/api\/activityDetail/, 'get', activity)
 
 Mock.mock(/\/api\/activities/, 'get', listActivities)

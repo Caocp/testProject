@@ -8,19 +8,12 @@ export function listActivities (parameter) {
   })
 }
 
-export function findActivityDetail (id) {
-  return request({
-    url: `/activities/${id}`,
-    method: 'get'
-  })
-}
-
 
 export function activityDate (params) {
   return request({
     url: '/activityDetail',
-    method: 'post',
-    data:params
+    method: 'get',
+    params: params
   })
 }
 
