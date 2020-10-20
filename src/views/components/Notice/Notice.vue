@@ -1,9 +1,9 @@
 <template>
-  <van-swipe :autoplay="3000" style="height: 60px;" vertical :show-indicators="false" :touchable="false">
+  <van-swipe :autoplay="3000"  style="height: 50px;" vertical :show-indicators="false" :touchable="false">
     <van-swipe-item v-for="(notice, index) in value.items" :key="index">
-      <div class="notice">
+      <div class="notice" @click="onCmsDetail">
         <p class="title">{{notice.title}}</p>
-        <div v-html="notice.text" class="desc"></div>
+        <!-- <div v-html="notice.text" class="desc"></div> -->
       </div>
     </van-swipe-item>
   </van-swipe>
@@ -22,16 +22,24 @@ export default {
       type: Object,
       defaultValue: {}
     }
+  },
+  methods :{
+    onCmsDetail (){
+      this.$router.push({
+        path:'noticeNews',
+        
+      })
+  }
   }
 }
 </script>
 
 <style scoped>
   .notice {
-    height: 50px
+    height: 40px
   }
   .notice>>> p {
-    margin: 5px 10px;
+    margin: 15px 10px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
