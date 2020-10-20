@@ -6,3 +6,11 @@ export function getHome () {
     method: 'get'
   })
 }
+
+
+export function getNoticesList () {
+  return request({
+    url: '/noticesList',
+    method: 'get'
+  })
+}

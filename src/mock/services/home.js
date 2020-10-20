@@ -42,7 +42,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "static/uploads/images/20191225/20191225162311316.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
   status: 2,
   reasons: null,
 }, {
@@ -56,7 +56,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "static/uploads/images/20191225/20191225162311316.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
   status: 2,
   reasons: null,
 }, {
@@ -70,7 +70,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "static/uploads/images/20191225/20191225162311316.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
   status: 2,
   reasons: null,
 }, {
@@ -84,7 +84,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "static/uploads/images/20191225/20191225162311316.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
   status: 2,
   reasons: null,
 }, {
@@ -98,7 +98,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "static/uploads/images/20191225/20191225162311316.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
   status: 2,
   reasons: null,
 
@@ -113,11 +113,19 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "static/uploads/images/20191225/20191225162311316.jpg",
+  image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
   status: 2,
   reasons: null,
 
 }]
+
+const noticesList = () => {
+  return builder(notices, '成功', 200)
+}
+
+Mock.mock(/\/api\/noticesList/, noticesList)
+
+
 const navigateImages = ['https://www.hispsp.com/static/uploads/images/20191209/20191209162954973.png', 'https://www.hispsp.com/static/uploads/images/20191209/20191209163058146.png', 'https://www.hispsp.com/static/uploads/images/20191209/20191209163026563.png']
 
 const activities = [{
@@ -133,6 +141,9 @@ const activities = [{
   time: '2020/06/10',
   status: 1
 }]
+
+
+
 
 const home = () => {
   return builder([{
