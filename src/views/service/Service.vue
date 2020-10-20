@@ -2,6 +2,7 @@
   <div class="home" style="margin-bottom: 80px;">
     <van-nav-bar
       title="服务，便捷简e"
+      style="position: fixed;width :100%;"
     >
     </van-nav-bar>
     <van-panel v-for="(menu, index) in menus" :title="menu.title" :key="index">
