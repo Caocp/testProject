@@ -176,7 +176,6 @@ const listActivities = (options) => {
 
 const activity = (options) => {
     const parameters = getQueryParameters(options)
-    console.log('queryParameters', parameters)
     const currentActivityDetail = activities.filter(item => item.id === parameters.id).shift()
     return builder(currentActivityDetail, '成功', 200);
   }

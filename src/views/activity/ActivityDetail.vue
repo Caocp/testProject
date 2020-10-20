@@ -68,7 +68,6 @@ export default {
     },
     created (){
       this.id = this.$route.query.id
-      console.log(this.id)
       this.initData(this.id)
     },
     methods :{
@@ -80,7 +79,6 @@ export default {
           id: id
         }
         activityDate(params).then(res => {
-          console.log(res.data)
           this.result = res.data
           this.imageList.push(res.data.image) 
           
