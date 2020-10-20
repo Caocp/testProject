@@ -3,7 +3,8 @@ import { ACTIVE_TABBAR, PARK_STORE } from '@/store/mutation-types'
 
 const app = {
   state: {
-    activeTabbar: ''
+    activeTabbar: '',
+    parkStore: ''
   },
   mutations: {
     SET_ACTIVE_TABBAR: (state, name) => {
@@ -11,7 +12,7 @@ const app = {
       storage.set(ACTIVE_TABBAR, name)
     },
     SET_PARK_STORE: (state, name) => {
-      state.activeTabbar = name
+      state.parkStore = name
       storage.set(PARK_STORE, name)
     }
   }

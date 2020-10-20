@@ -108,8 +108,11 @@ export default {
   .statusButton {
     width: 80%;
     border-radius: 18px;
-    margin-left: 10%;
-    /* position: fixed; */
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: auto;
     z-index: 100;
     background-color: #8591ff;
     border:#8591ff;
