@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import { activityDate } from '../../../api/activity'
+import { activityDate } from '../../api/activity'
 export default {
     data () {
       return {

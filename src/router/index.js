@@ -49,7 +49,7 @@ const routes = [
   {
     path: '/ActivityDetail',
     name: 'ActivityDetail',
-    component: () => import('@/views/components/Activity/ActivityDetail'),
+    component: () => import('@/views/activity/ActivityDetail'),
     meta: { title: '活动详情' }
   }
 ]
