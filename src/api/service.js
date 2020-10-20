@@ -6,3 +6,11 @@ export function listMenus () {
     method: 'get'
   })
 }
+
+
+export function notifice () {
+  return request({
+    url: '/user/notifice',
+    method: 'get'
+  })
+}

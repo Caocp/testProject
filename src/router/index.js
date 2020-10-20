@@ -51,6 +51,12 @@ const routes = [
     name: 'ActivityDetail',
     component: () => import('@/views/activity/ActivityDetail'),
     meta: { title: '活动详情' }
+  },
+  {
+    path: '/NotificeManagement',
+    name: 'NotificeManagement',
+    component: () => import('@/views/me/NotificeManagement'),
+    meta: { title: '通知管理' }
   }
 ]
 
