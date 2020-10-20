@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" style="margin-bottom: 80px;">
     <van-nav-bar
       title="服务，便捷简e"
     >

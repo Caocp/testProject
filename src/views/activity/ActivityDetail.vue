@@ -46,7 +46,8 @@
             </van-row>
           </van-collapse-item>
         </van-collapse>
-        <div style="margin: 10px;">
+
+        <div style="margin: 10px;margin-bottom: 80px;">
           <h3>活动内容</h3>
           <div v-html="result.richText"></div>
         </div>
