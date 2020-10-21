@@ -81,7 +81,11 @@ export default {
         }
         activityDate(params).then(res => {
           this.result = res.data
-          this.imageList.push(res.data.image) 
+          console.log(res.data)
+          if(res.data.image){
+            this.imageList.push(res.data.image) 
+          }
+          
           
         })
     },

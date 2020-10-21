@@ -44,7 +44,6 @@ export default {
     methods :{
         initData () {
             notifice().then(res => {
-                console.log(res.data)
                 this.notificeDataList = res.data
             })
         },

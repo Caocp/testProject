@@ -50,7 +50,7 @@ const activities = [{
   initiator: "杨婷",
   richText: '是利用市级财政科技资金，支持企业、团队向服务机构购买专业服务（战略规划、技术研发、技术转移、检验检测、人才培养、资源开放等）的一种政策工具'
 }, {
-  id: 4,
+  id: '4',
   name: '2017浦软园区运动季谁“羽”争锋',
   image: 'https://www.hispsp.com/static/uploads/images/20170401/20170401091909625.jpg',
   time: '2017/04/01',
