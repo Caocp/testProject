@@ -4,7 +4,7 @@ import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 import router from './router'
 import store from './store'
-import { Lazyload, DropdownMenu, DropdownItem, Collapse, CollapseItem,Col, Row, NavBar, Button, Cell, CellGroup, Tab, Tabs } from 'vant'
+import { Lazyload, DropdownMenu, DropdownItem, Collapse, CollapseItem,Col, Row, NavBar, Button, Cell, CellGroup, Tab, Tabs, List } from 'vant'
 
 import './mock'
 import './permission' // permission control
@@ -23,6 +23,7 @@ Vue.use(Cell);
 Vue.use(CellGroup);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(List);
 Vue.config.productionTip = false
 
 new Vue({

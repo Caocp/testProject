@@ -9,12 +9,20 @@
           style="position: fixed;width: 100%;"
         />
         <div style="padding-top: 45px;">
-            <van-cell-group v-for='(item, index) in notificeDataList' :key="index">
-                <van-cell :title="item.title" :value="item.createTime" :label="item.content" />
-            </van-cell-group>
+            <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+                <van-list
+                v-model="loading"
+                :finished="finished"
+                finished-text="没有更多了"
+                @load="onLoad"
+                >
+                
+                    <van-cell-group v-for='(item, index) in notificeDataList' :key="index">
+                        <van-cell :title="item.title" :value="item.createTime" :label="item.content" />
+                    </van-cell-group>
+                </van-list>
+            </van-pull-refresh>
         </div>
-        
-
     </div>
 </template>        
 
@@ -23,7 +31,10 @@ import { notifice } from '../../api/service'
 export default {
     data () {
         return {
-            notificeDataList:[]
+            notificeDataList:[],
+            loading: false,
+            finished: false,
+            refreshing: false,
         }
         
     },
@@ -31,17 +42,37 @@ export default {
         this.initData()
     },
     methods :{
-        onClickLeft (){
-            this.$router.go(-1);//返回上一层
-        },
         initData () {
             notifice().then(res => {
                 console.log(res.data)
                 this.notificeDataList = res.data
-            
-            
             })
-    },
+        },
+          onLoad() {
+            if (this.refreshing) {
+            this.notificeDataList = [];
+            this.refreshing = false;
+            }
+            // for (let i = 0; i < 5; i++) {
+            // this.notificeDataList.push(this.notificeDataList.length + 1);
+            // }
+            this.loading = false;
+            if (this.notificeDataList.length >= 5) {
+            this.finished = true;
+            }
+          },
+        onRefresh() {
+            // 清空列表数据
+            this.finished = false;
+            // 重新加载数据
+            // 将 loading 设置为 true，表示处于加载状态
+            this.loading = true;
+            this.onLoad();
+            },
+        onClickLeft (){
+            this.$router.go(-1);//返回上一层
+        },
+        
     }
 }
 </script>
