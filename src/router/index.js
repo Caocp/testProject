@@ -63,6 +63,12 @@ const routes = [
     name: 'noticeNews',
     component: () => import('@/views/home/noticeNews'),
     meta: { title: '头条' }
+  },
+  {
+    path: '/personInfor',
+    name: 'personInfor',
+    component: () => import('@/views/me/personInfor'),
+    meta: { title: '我的资料' }
   }
 ]
 
