@@ -6,8 +6,8 @@
     >
     </van-nav-bar>
     <van-panel v-for="(menu, index) in menus" :title="menu.title" :key="index">
-      <van-grid :column-num="4" >
-        <van-grid-item v-for="(item, index) in menu.items" :key="index" :icon="item.icon" :text="item.name" />
+      <van-grid :column-num="4">
+        <van-grid-item v-for="(item, index) in menu.items" :key="index" :icon="item.icon" :text="item.name" :to="item.url" />
       </van-grid>
     </van-panel>
   </div>

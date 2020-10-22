@@ -69,6 +69,12 @@ const routes = [
     name: 'personInfor',
     component: () => import('@/views/me/personInfor'),
     meta: { title: '我的资料' }
+  },
+  {
+    path: '/gym',
+    name: 'gym',
+    component: () => import('@/views/service/gym'),
+    meta: { title: '健身中心' }
   }
 ]
 
