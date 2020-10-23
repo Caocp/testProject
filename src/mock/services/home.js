@@ -42,7 +42,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20190419/20190419092255611.jpg",
   status: 2,
   reasons: null,
 }, {
@@ -70,7 +70,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20200228/20200228163431488.jpg",
   status: 2,
   reasons: null,
 }, {
@@ -84,7 +84,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20180209/20180209134019097.jpg",
   status: 2,
   reasons: null,
 }, {
@@ -98,7 +98,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: "https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg",
+  image: "https://www.hispsp.com/static/uploads/images/20170221/20170221135120932.jpg",
   status: 2,
   reasons: null,
 
@@ -113,7 +113,7 @@ const notices = [{
   url: null,
   richText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448px; width:3264px" /></p>',
   mobileRichText: '<p>请问123</p><p><img alt="" src="/static/uploads/images/20200218/20200218153423039.jpg" style="height:2448rem; width:3264rem" /></p>',
-  image: 'https://www.hispsp.com/static/uploads/images/20200414/20200414170331572.jpg',
+  image: 'https://www.hispsp.com/static/uploads/images/20191218/20191218100158082.jpg',
   status: 2,
   reasons: null,
 
