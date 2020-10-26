@@ -11,8 +11,8 @@
         <Banner :msg='bannerData'></Banner>
         <h4 style="display: inline-block;padding: 10px;color: #ff753c;font-size: 20px;font-weight: 700;">优惠活动</h4>
         <van-tabs v-model="active">
-            <van-tab title="场地介绍"><img src='../../assets/developing.png' style="height: 200px;position: absolute;left: 30%;top: 60px;" /></van-tab>
-            <van-tab title="查看课表"><img src='../../assets/developing.png' style="height: 200px;position: absolute;left: 30%;top: 60px;" /></van-tab>
+            <van-tab title="场地介绍"><img src='../../assets/developing.png' style="height: 200px;position: fixed;left: 32%;top: 50%;" /></van-tab>
+            <van-tab title="查看课表"><img src='../../assets/developing.png' style="height: 200px;position: fixed;left: 32%;top: 50%;" /></van-tab>
         </van-tabs>
     </div>
 </template>
