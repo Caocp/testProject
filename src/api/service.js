@@ -8,9 +8,10 @@ export function listMenus () {
 }
 
 
-export function notifice () {
+export function notifice (data) {
   return request({
     url: '/user/notifice',
-    method: 'get'
+    method: 'get',
+    params: data
   })
 }
