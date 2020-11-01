@@ -42,6 +42,6 @@ export default {
             this.bannerData = data
         }
     },
-    
+
 }
 </script>
