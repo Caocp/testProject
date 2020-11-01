@@ -11,6 +11,12 @@ const userInfo = () => {
 
 Mock.mock(/\/api\/user\/info/, userInfo)
 
+const myInfo = () => {
+
+}
+
+
+
 const notificeList = [
   {
     objectid: 134,

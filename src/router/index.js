@@ -75,7 +75,14 @@ const routes = [
     name: 'gym',
     component: () => import('@/views/service/gym'),
     meta: { title: '健身中心' }
+  },
+  {
+    path: '/integral',
+    name: 'integral',
+    component: () => import('@/views/me/integral'),
+    meta: { title: '积分签到' }
   }
+
 ]
 
 const router = new VueRouter({

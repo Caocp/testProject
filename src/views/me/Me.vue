@@ -5,7 +5,7 @@
     >
     </van-nav-bar>
     <div class="header">
-      <van-row type="flex" justify="end" align="center">
+      <van-row type="flex" justify="end" align="center" @click="integral(userInfo.name)">
         <van-image :height="30" :width="40" fit="contain" :src="require('@/assets/integral.png')"/><p class="sign">积分签到</p>
       </van-row>
       <van-row type="flex" align="center">
@@ -68,6 +68,17 @@ export default {
   },
   activated () {
     this.$store.commit('SET_ACTIVE_TABBAR', 'me')
+  },
+  methods:{
+    integral(item){
+      console.log(item)
+      this.$router.push({
+        path:'Integral',
+        query:{
+          username:item
+        }
+      })
+    }
   }
 }
 </script>
