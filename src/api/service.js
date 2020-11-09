@@ -15,3 +15,11 @@ export function notifice (data) {
     params: data
   })
 }
+
+export function integralList(data) {
+  return request({
+    url:'user/integralList',
+    method:'get',
+    params:data
+  })
+}

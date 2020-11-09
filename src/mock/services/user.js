@@ -74,6 +74,105 @@ const myInfo =  {
 
 Mock.mock(/\/api\/user\/myInfo/, myInfo)
 
+
+const integralList = [
+  {
+    objectid: 11,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-11-09 14:09:00",
+  },
+  {
+    objectid: 12,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-11-01 14:09:00",
+  },
+  {
+    objectid: 13,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-10-28 14:09:00",
+  },
+  {
+    objectid: 14,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-10-25 14:09:05",
+  },
+  {
+    objectid: 15,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-10-23 14:09:03",
+  },
+  {
+    objectid: 16,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-10-20 14:09:00",
+  },
+  {
+    objectid: 17,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-09-16 14:09:00",
+  },
+  {
+    objectid: 18,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-09-10 14:09:00",
+  },
+  {
+    objectid: 19,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-08-16 09:09:00",
+  },
+  {
+    objectid: 20,
+    integralName: "每日积分签到",
+    num: 1,
+    updateDate: "2020-08-20 13:09:00",
+  },
+
+]
+
+const integralListData = (options) => {
+  const parameters = getQueryParameters(options)
+  console.log(parameters)
+  if (parameters && !parameters.page) {
+    parameters.page = 1
+  }
+  if (parameters && !parameters.pageSize) {
+    parameters.pageSize = 5
+  }
+  const startNum = (parameters.page - 1) * parameters.pageSize
+  const totalNumber = integralList.length
+  const data = []
+  for (let i = 0, index = startNum; i < parameters.pageSize && index < totalNumber; index++, i++) {
+    data.push(integralList[index])
+  }
+  const pages = Math.ceil(integralList.length / parameters.pageSize)
+  const pageInfo = {
+    hasNextPage: parameters.page < pages,
+    total: integralList.length,
+    pageSize: parseInt(parameters.pageSize),
+    pages: pages,
+    pageNum: parseInt(parameters.page),
+    data: data
+  }
+  return builder(pageInfo, '成功', 200)
+}
+
+
+
+
+
+Mock.mock(/\/api\/user\/integralList/, integralListData)
+
+
 const notificeList = [
   {
     objectid: 134,

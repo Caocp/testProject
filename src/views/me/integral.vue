@@ -11,7 +11,7 @@
       <van-row style="margin-left: 18%;padding-top: 20%;">
         <van-col span:12 style="color: #f9cb4b;font-size: 25px;">{{userInfo.integralNum}}</van-col>
         <van-col span:12>
-          <button style="width: 60px;border-radius: 12px;border: none;margin: 10px 20px;color: white;background: #1890ff;">查看></button>
+          <button style="width: 60px;border-radius: 12px;border: none;margin: 10px 20px;color: white;background: #1890ff;" @click="integralInfo">查看></button>
         </van-col>
       </van-row>
     </div>
@@ -48,12 +48,20 @@ name: "integral.vue",
   },
   created(){
     this.userInfo = JSON.parse(sessionStorage.getItem("userInfo"))
-   this.time=moment(new Date()).format("YYYY年MM月DD")+"日"
+    this.time=moment(new Date()).format("YYYY年MM月DD日")
   },
   
   methods:{
     onClickLeft(){
       this.$router.go(-1)
+    },
+    integralInfo(){
+      this.$router.push({  
+        path:'/integralInfo',   
+        query:{           
+          integralNum:this.userInfo.integralNum , 
+        }
+      })
     }
   }
 }
@@ -63,7 +71,6 @@ name: "integral.vue",
 <style scoped>
   .header{
     height: 300px;
-    /* background: darkgrey; */
     background:url('../../assets/qiandaobg.png') no-repeat;
     background-size: 100%;
   }

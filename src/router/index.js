@@ -81,6 +81,12 @@ const routes = [
     name: 'integral',
     component: () => import('@/views/me/integral'),
     meta: { title: '积分签到' }
+  },
+  {
+    path: '/integralInfo',
+    name: 'integralInfo',
+    component: () => import('@/views/me/integralInfo'),
+    meta: { title: '查看积分签到' }
   }
 
 ]
