@@ -86,9 +86,6 @@ export default {
       console.log(item)
       this.$router.push({
         path:'Integral',
-        query:{
-          username:item
-        }
       })
     }
   }
