@@ -11,11 +11,68 @@ const userInfo = () => {
 
 Mock.mock(/\/api\/user\/info/, userInfo)
 
-const myInfo = () => {
-
+const myInfo =  {
+  accountLoginScope: null,
+  accountNonExpired: true,
+  accountNonLocked: true,
+  apartmentCity: 0,
+  avatar: 'https://img.yzcdn.cn/vant/cat.jpeg',
+  approved: false,
+  birthday: "2019-07-20",
+  cardid: "",
+  companyorigin: "火锅城",
+  createDate: "2020-11-02 10:40:14",
+  credentialsNonExpired: true,
+  deleteFlag: 1,
+  department: null,
+  education: 353,
+  eispUsername: null,
+  email: "",
+  emailFlag: 0,
+  enabled: true,
+  enterprise: null,
+  enterpriseId: 2078,
+  enterpriseInput: "科汇名城0001",
+  enterpriseName: null,
+  enterprisePhone: null,
+  integralNum:364,
+  days:2,
+  enterpriseRoot: 1,
+  hometownCity: 0,
+  idnumber: "412702199202022222",
+  isDriver: false,
+  isFirstLogin: 0,
+  isLeaving: null,
+  isThirdPartyResidence: false,
+  location_parkid: 1,
+  marital: 1,
+  memberCode: "815850205739034122",
+  name: "测试试一下昵称",
+  nation: 6,
+  parkId: 1,
+  phone: "13744441111",
+  realName: "姓名",
+  regType: null,
+  roleArray: null,
+  roleList: null,
+  settingApartmentCity: null,
+  settingDict: null,
+  settingHometowntCity: null,
+  settingNation: null,
+  sex: 2,
+  signature: "",
+  state: 1,
+  status: 1,
+  updateDate: "2020-11-02 10:40:14",
+  userFace: "/static/uploads/images/20200602/cut20200602095446795.jpg",
+  userFlag: 2,
+  username: "cg_13744441111",
+  wechatHeadimgurl: null,
+  wechatOpenid: null,
+  workYears: 0
 }
 
-
+Mock.mock(/\/api\/user\/myInfo/, myInfo)
 
 const notificeList = [
   {

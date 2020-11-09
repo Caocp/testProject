@@ -15,6 +15,14 @@ export function getInfo () {
   })
 }
 
+export function getUserInfo () {
+  return request({
+    url:'/user/myInfo',
+    method:'get'
+  })
+}
+
+
 export function logout (parameter) {
   return request({
     url: '/logout',

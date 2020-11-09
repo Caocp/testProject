@@ -5,16 +5,16 @@
     >
     </van-nav-bar>
     <div class="header">
-      <van-row type="flex" justify="end" align="center" @click="integral(userInfo.name)">
+      <van-row type="flex" justify="end" align="center" @click="integral(myInfo.name)">
         <van-image :height="30" :width="40" fit="contain" :src="require('@/assets/integral.png')"/><p class="sign">积分签到</p>
       </van-row>
       <van-row type="flex" align="center">
-        <van-image class="avatar" round :height="100" :width="100" :src="userInfo.avatar"/><p class="name">{{userInfo.name}}</p>
+        <van-image class="avatar" round :height="100" :width="100" :src="myInfo.avatar"/><p class="name">{{myInfo.name}}</p>
       </van-row>
       <van-grid :column-num="3">
         <van-grid-item text="我的积分">
           <template #icon>
-            <p>11</p>
+            <p>{{myInfo.integralNum}}</p>
           </template>
         </van-grid-item>
         <van-grid-item text="测试卡">
@@ -45,6 +45,7 @@
 
 <script>
 import { NavBar, Image, Row, Col, Grid, GridItem, CellGroup, Cell } from 'vant'
+import { getUserInfo } from '../../api/login'
 export default {
   name: 'Me',
   components: {
@@ -59,6 +60,7 @@ export default {
   },
   data () {
     return {
+      myInfo:[]
     }
   },
   computed: {
@@ -66,10 +68,20 @@ export default {
       return this.$store.getters.userInfo
     }
   },
+  created () {
+    this.getUserInfo()
+  },
   activated () {
     this.$store.commit('SET_ACTIVE_TABBAR', 'me')
   },
   methods:{
+    async getUserInfo () {
+            await getUserInfo().then(res => {
+              this.myInfo = res
+              console.log(res)
+              window.sessionStorage.setItem("userInfo", JSON.stringify(res));
+            })
+        },
     integral(item){
       console.log(item)
       this.$router.push({
