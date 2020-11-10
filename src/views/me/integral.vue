@@ -27,6 +27,10 @@
           </p>
       </div>
       <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;" @click="immediatelyIntegral">立即签到</van-button>
+      <van-dialog v-model="showIntegral" title="标题" :show-cancel-button='false' :show-confirm-button='false'>
+        <img src="../../assets/jilubg.png" />
+        <span>打算多少所多</span>
+      </van-dialog>
     </div>
     <div class="integralRule">
       <div style="text-align: center;font-size: 16px;font-weight: 700;margin-bottom: 20px;">查看积分规则</div>
@@ -50,6 +54,7 @@ name: "integral.vue",
       userInfo:[],
       time:'',
       show: false,
+      showIntegral:false
     }
   },
   created(){
@@ -62,7 +67,7 @@ name: "integral.vue",
       this.show = true;
     },
     immediatelyIntegral(){
-      alert(9)
+      this.showIntegral = true
     },
     onConfirm(date) {
       this.show = false;
