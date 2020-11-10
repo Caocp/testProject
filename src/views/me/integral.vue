@@ -21,12 +21,12 @@
         <p style='fontWeight:600'>你已累计签到<span style='color:#FFBA00'>{{userInfo.days}}天</span></p>
         <p>
           <span style="color:#999999;font-size:0.2rem;">{{time}}</span>
-          <van-button style="color:#5398FF;margin-left: 10px;"  :value="time" @click="showDate()">查看详情</van-button>
+          <van-button style="color:#5398FF;margin-left: 10px;"  :value="time" @click="showDate">查看详情</van-button>
           <!-- <van-cell title="选择多个日期" :value="text" @click="show = true" /> -->
           <van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
           </p>
       </div>
-      <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;">立即签到</van-button>
+      <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;" @click="immediatelyIntegral">立即签到</van-button>
     </div>
     <div class="integralRule">
       <div style="text-align: center;font-size: 16px;font-weight: 700;margin-bottom: 20px;">查看积分规则</div>
@@ -60,6 +60,9 @@ name: "integral.vue",
   methods:{
     showDate(){
       this.show = true;
+    },
+    immediatelyIntegral(){
+      alert(9)
     },
     onConfirm(date) {
       this.show = false;
