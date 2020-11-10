@@ -11,7 +11,7 @@
       <van-row style="margin-left: 18%;padding-top: 20%;">
         <van-col span:12 style="color: #f9cb4b;font-size: 25px;">{{userInfo.integralNum}}</van-col>
         <van-col span:12>
-          <button style="width: 60px;border-radius: 12px;border: none;margin: 10px 20px;color: white;background: #1890ff;" @click="integralInfo">查看></button>
+          <van-button type="info" style="width: 63%;border-radius: 12px;border: none;height: 30px;margin: 10px 20px;color: white;background: #1890ff;" @click="integralInfo">查看></van-button>
         </van-col>
       </van-row>
     </div>
@@ -19,9 +19,14 @@
       <img src="../../assets/qiaodaob.png" style="float:left;" />
       <div style="padding-left: 3%;width: 57%;float:left;">
         <p style='fontWeight:600'>你已累计签到<span style='color:#FFBA00'>{{userInfo.days}}天</span></p>
-        <p><span style="color:#999999;font-size:0.2rem;">{{time}}</span><span style="color:#5398FF;margin-left: 10px;">查看详情</span></p>
+        <p>
+          <span style="color:#999999;font-size:0.2rem;">{{time}}</span>
+          <van-button style="color:#5398FF;margin-left: 10px;"  :value="time" @click="showDate()">查看详情</van-button>
+          <!-- <van-cell title="选择多个日期" :value="text" @click="show = true" /> -->
+          <van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+          </p>
       </div>
-      <button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;">立即签到</button>
+      <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;">立即签到</van-button>
     </div>
     <div class="integralRule">
       <div style="text-align: center;font-size: 16px;font-weight: 700;margin-bottom: 20px;">查看积分规则</div>
@@ -43,7 +48,8 @@ name: "integral.vue",
   data(){
     return{
       userInfo:[],
-      time:''
+      time:'',
+      show: false,
     }
   },
   created(){
@@ -52,6 +58,14 @@ name: "integral.vue",
   },
   
   methods:{
+    showDate(){
+      this.show = true;
+    },
+    onConfirm(date) {
+      this.show = false;
+      // this.time = `选择了 ${date.length} 个日期`;
+      console.log(this.time)
+    },
     onClickLeft(){
       this.$router.go(-1)
     },
