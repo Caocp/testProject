@@ -22,14 +22,24 @@
         <p>
           <span style="color:#999999;font-size:0.2rem;">{{time}}</span>
           <van-button style="color:#5398FF;margin-left: 10px;"  :value="time" @click="showDate">查看详情</van-button>
-          <!-- <van-cell title="选择多个日期" :value="text" @click="show = true" /> -->
-          <van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
-          </p>
+        </p>
       </div>
       <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;" @click="immediatelyIntegral">立即签到</van-button>
-      <van-dialog v-model="showIntegral" title="标题" :show-cancel-button='false' :show-confirm-button='false'>
+
+      <van-dialog v-model="show" title="" :show-cancel-button='false' :show-confirm-button='false' :close-on-click-overlay='true' class="dialogModal">
         <img src="../../assets/jilubg.png" />
-        <span>打算多少所多</span>
+        <div style="width: 50%;margin: 17% auto;text-align: center;">
+          <van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+        </div>
+      </van-dialog>
+
+
+      <van-dialog v-model="showIntegral" title="" :show-cancel-button='false' :show-confirm-button='false' :close-on-click-overlay='true' class="dialogModal">
+        <img src="../../assets/jilubg.png" />
+        <div style="width: 50%;margin: 17% auto;text-align: center;">
+          <p>已成功签到<span style="color: rgb(255, 186, 0);font-size: 18px;">{{userInfo.days}}</span>天咯</p>
+          <p>获得<span style="color: rgb(255, 186, 0);font-size: 18px;">1</span>积分</p>
+        </div>
       </van-dialog>
     </div>
     <div class="integralRule">
@@ -39,7 +49,6 @@
       <p>3、注册绑定手机号即送10积分，完善个人资料赠送5积分，绑定汇智卡赠送50积分。</p>
       <p>4、注册绑定手机号即送10积分，完善个人资料赠送5积分，绑定汇智卡赠送50积分。</p>
       <p>5、注册绑定手机号即送10积分，完善个人资料赠送5积分，绑定汇智卡赠送50积分。</p>
-      
     </div>
   </div>
 
@@ -91,6 +100,20 @@ name: "integral.vue",
 </script>
 
 <style scoped>
+  .dialogModal{
+    overflow:inherit;
+    height: 150px;
+    width: 250px;
+  }
+  .dialogModal .van-overlay{
+    background-color: initial;
+  }
+  .dialogModal img{
+    width: 50%;
+    position: absolute;
+    top: -65px;
+    left: 25%;
+  }
   .header{
     height: 300px;
     background:url('../../assets/qiandaobg.png') no-repeat;
