@@ -25,15 +25,9 @@
         </p>
       </div>
       <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;" @click="immediatelyIntegral">立即签到</van-button>
-
-      <van-dialog v-model="show" title="" :show-cancel-button='false' :show-confirm-button='false' :close-on-click-overlay='true' class="dialogModal">
-        <img src="../../assets/jilubg.png" />
-        <div style="width: 50%;margin: 17% auto;text-align: center;">
-          <van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
-        </div>
-      </van-dialog>
-
-
+        
+        <Dialog :msg='show'></Dialog>
+      
       <van-dialog v-model="showIntegral" title="" :show-cancel-button='false' :show-confirm-button='false' :close-on-click-overlay='true' class="dialogModal">
         <img src="../../assets/jilubg.png" />
         <div style="width: 50%;margin: 17% auto;text-align: center;">
@@ -56,8 +50,12 @@
 
 <script>
 import moment from 'moment';
+import Dialog from '../components/Me/dialog'
 export default {
 name: "integral.vue",
+  components: {
+    Dialog
+  },
   data(){
     return{
       userInfo:[],
@@ -78,11 +76,7 @@ name: "integral.vue",
     immediatelyIntegral(){
       this.showIntegral = true
     },
-    onConfirm(date) {
-      this.show = false;
-      // this.time = `选择了 ${date.length} 个日期`;
-      console.log(this.time)
-    },
+    
     onClickLeft(){
       this.$router.go(-1)
     },
@@ -100,19 +94,10 @@ name: "integral.vue",
 </script>
 
 <style scoped>
-  .dialogModal{
+   .dialogModal{
     overflow:inherit;
     height: 150px;
     width: 250px;
-  }
-  .dialogModal .van-overlay{
-    background-color: initial;
-  }
-  .dialogModal img{
-    width: 50%;
-    position: absolute;
-    top: -65px;
-    left: 25%;
   }
   .header{
     height: 300px;
