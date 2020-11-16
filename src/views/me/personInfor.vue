@@ -67,6 +67,18 @@
                     @cancel="showPickerDate = false"
                 />
             </van-popup>
+            <van-field
+                readonly
+                clickable
+                name="img"
+                :value="img"
+                label="上传图片"
+                placeholder="点击上传图片"
+            />
+            <img :src='img' />
+            <van-uploader :after-read="afterRead" />
+
+            
             <div style="margin: 16px;">
                 <van-button round block type="info" native-type="submit">
                 提交
@@ -93,6 +105,7 @@ export default {
             minDate: new Date(1980, 0, 1),
             maxDate: new Date(2025, 10, 1),
             currentDate:  '',
+            img:''
         }
     },
     created (){
@@ -111,6 +124,10 @@ export default {
         },
         onSubmit(values) {
             console.log('submit', values);
+        },
+        afterRead(file) {
+            // 此时可以自行将文件上传至服务器
+            this.img = file.file.name;
         },
         
     }

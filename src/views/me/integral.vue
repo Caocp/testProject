@@ -21,7 +21,7 @@
         <p style='fontWeight:600'>你已累计签到<span style='color:#FFBA00'>{{userInfo.days}}天</span></p>
         <p>
           <span style="color:#999999;font-size:0.2rem;">{{time}}</span>
-          <van-button style="color:#5398FF;margin-left: 10px;"  :value="time" @click="showDate">查看详情</van-button>
+          <van-button style="color:#5398FF;margin-left: 10px;"  :value="time" @click="showDate()">查看详情</van-button>
         </p>
       </div>
       <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;" @click="immediatelyIntegral">立即签到</van-button>
@@ -126,5 +126,11 @@ name: "integral.vue",
   }
   .integralRule p{
     color:rgb(153, 153, 153);
+  }
+  .dialogModal img{
+    width: 50%;
+    position: absolute;
+    top: -65px;
+    left: 25%;
   }
 </style>

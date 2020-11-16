@@ -1,7 +1,7 @@
 <template>
     <!-- <div class="calendarShow" v-if="show"> -->
           <!-- <img src="../../../assets/jilubg.png" /> -->
-          <van-calendar v-model="show" type="multiple" @confirm="onConfirm" />
+          <van-calendar v-model="show" type="multiple" :formatter="formatter" :default-date='data' @confirm="onConfirm" />
         <!-- </div> -->
 </template>
 
@@ -11,18 +11,50 @@
 export default {
     data(){
         return{
-            show:this.$parent.show
+            show:true,
+            data:[]
+
         }
     },
     created(){
         console.log(this.show)
+        this.data.push('2020-11-16')
     },
     methods:{
         onConfirm(date) {
-      this.show = false;
-      // this.time = `选择了 ${date.length} 个日期`;
-      console.log(this.time)
-    },
+          this.show = false;
+          // this.time = `选择了 ${date.length} 个日期`;
+          console.log(this.time)
+        },
+         formatter(day) {
+           let year = day.date.getFullYear();
+           let month = day.date.getMonth();
+           let date = day.date.getDate();
+          //  let getNowDate = new Date();
+          //  let Year = getNowDate.getFullYear()
+          //  let Month = getNowDate.getMonth()
+          //  let Day = getNowDate.getDay()
+
+          if (month === 5) {
+            if (date === 1) {
+              day.topInfo = '劳动节';
+            } else if (date === 4) {
+              day.topInfo = '青年节';
+            } else if (date === 11) {
+              day.text = '今天';
+            }
+          }
+          // if(year == Year && month == Month && date == Day){
+          //     day.type = 'selected'
+          // }
+          if (day.type === 'start') {
+            day.bottomInfo = '入住';
+          } else if (day.type === 'end') {
+            day.bottomInfo = '离店';
+          }
+
+          return day;
+        },
     }
 }
 </script>
@@ -55,10 +87,5 @@ export default {
   }
  
 
-  .calendarShow img{
-    width: 50%;
-    position: absolute;
-    top: -65px;
-    left: 25%;
-  }
+  
 </style>
