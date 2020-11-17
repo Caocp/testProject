@@ -40,7 +40,7 @@ export default {
   methods: {
     initData () {
       listMenus().then(res => {
-        this.menus = res.data
+        this.menus = res.data;
       })
     }
   }
