@@ -57,7 +57,7 @@
                 @click="showPickerDate = true"
             />
             <van-popup v-model="showPickerDate" position="bottom">
-                <van-datetime-picker
+                <van-datetime-picker  
                     v-model="currentDate"
                     type="date"
                     title="选择日期"

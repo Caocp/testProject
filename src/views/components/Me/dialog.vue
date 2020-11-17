@@ -1,58 +1,57 @@
 <template>
-    <!-- <div class="calendarShow" v-if="show"> -->
-          <!-- <img src="../../../assets/jilubg.png" /> -->
-          <van-calendar v-model="show" type="multiple" :formatter="formatter" :default-date='data' @confirm="onConfirm" />
-        <!-- </div> -->
+    <van-calendar type="multiple" v-model='show' :formatter="formatter" :poppable='true' :title='title' :color='color' :show-confirm='false' :min-date='minDate' :style="{ height: '500px', width:'80%',margin:'10%',borderRadius:'20px' }" @confirm="onConfirm" />
 </template>
 
 
 
 <script>
 export default {
+  name:'Dialog',
+  props:['show'],
     data(){
         return{
-            show:true,
-            data:[]
-
+            color:'rgb(255, 186, 0)',
+            minDate: new Date(2010, 0, 1),
+            title:'打卡记录'
         }
     },
+    
     created(){
-        console.log(this.show)
-        this.data.push('2020-11-16')
+      
     },
     methods:{
-        onConfirm(date) {
-          this.show = false;
-          // this.time = `选择了 ${date.length} 个日期`;
-          console.log(this.time)
+      onConfirm(date) {
+        this.$emit('upDataShowModal','false')
+          
         },
          formatter(day) {
            let year = day.date.getFullYear();
-           let month = day.date.getMonth();
-           let date = day.date.getDate();
-          //  let getNowDate = new Date();
-          //  let Year = getNowDate.getFullYear()
-          //  let Month = getNowDate.getMonth()
-          //  let Day = getNowDate.getDay()
-
-          if (month === 5) {
-            if (date === 1) {
-              day.topInfo = '劳动节';
-            } else if (date === 4) {
-              day.topInfo = '青年节';
-            } else if (date === 11) {
-              day.text = '今天';
+           let month = day.date.getMonth() + 1;
+           let day1 = day.date.getDate();
+          let dateList = [
+            {
+              year:'2020',
+              month:'09',
+              day:'06'
+            },
+            {
+              year:'2020',
+              month:'10',
+              day:'15'
+            },
+            {
+              year:'2020',
+              month:'11',
+              day:'13'
             }
-          }
-          // if(year == Year && month == Month && date == Day){
-          //     day.type = 'selected'
-          // }
-          if (day.type === 'start') {
-            day.bottomInfo = '入住';
-          } else if (day.type === 'end') {
-            day.bottomInfo = '离店';
-          }
+          ]
 
+          dateList.filter((item)=>{
+            if(item.year == year && item.month == month && item.day == day1){
+              day.type = 'selected'
+            }
+          })
+        
           return day;
         },
     }

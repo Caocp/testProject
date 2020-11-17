@@ -24,9 +24,10 @@
           <van-button style="color:#5398FF;margin-left: 10px;"  :value="time" @click="showDate()">查看详情</van-button>
         </p>
       </div>
+      <!-- 打开日历 -->
+      <Dialog :show='showModal' :v-on='upDataShowModal'></Dialog>
+
       <van-button style="width: 25%;border-radius: 15px;border: none;color: white;background: #FFBA00;height: 32px;" @click="immediatelyIntegral">立即签到</van-button>
-        
-        <Dialog :msg='show'></Dialog>
       
       <van-dialog v-model="showIntegral" title="" :show-cancel-button='false' :show-confirm-button='false' :close-on-click-overlay='true' class="dialogModal">
         <img src="../../assets/jilubg.png" />
@@ -60,8 +61,8 @@ name: "integral.vue",
     return{
       userInfo:[],
       time:'',
-      show: false,
-      showIntegral:false
+      showModal: false,
+      showIntegral:false,
     }
   },
   created(){
@@ -70,8 +71,12 @@ name: "integral.vue",
   },
   
   methods:{
+    upDataShowModal(e){
+      console.log(e)
+      this.showModal = e
+    },
     showDate(){
-      this.show = true;
+      this.showModal = true;
     },
     immediatelyIntegral(){
       this.showIntegral = true
@@ -87,7 +92,9 @@ name: "integral.vue",
           integralNum:this.userInfo.integralNum , 
         }
       })
-    }
+    },
+    
+    
   }
 }
 
