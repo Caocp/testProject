@@ -21,6 +21,7 @@
                 name="name"
                 label="昵称"
                 placeholder="昵称"
+                :show-error-message='true'
                 :rules="[{ required: true, message: '请填写昵称' }]"
             />
             <van-field
@@ -67,7 +68,15 @@
                     @cancel="showPickerDate = false"
                 />
             </van-popup>
-            <van-field
+
+
+            <van-field name="uploader" label="图片上传">
+                <template #input>
+                    <van-uploader v-model="uploader" />
+                </template>
+            </van-field>
+
+            <!-- <van-field
                 readonly
                 clickable
                 name="img"
@@ -76,12 +85,12 @@
                 placeholder="点击上传图片"
             />
             <img :src='img' />
-            <van-uploader :after-read="afterRead" />
+            <van-uploader :after-read="afterRead" /> -->
 
             
             <div style="margin: 16px;">
                 <van-button round block type="info" native-type="submit">
-                提交
+                    提交
                 </van-button>
             </div>
         </van-form>
@@ -105,7 +114,8 @@ export default {
             minDate: new Date(1980, 0, 1),
             maxDate: new Date(2025, 10, 1),
             currentDate:  '',
-            img:''
+            img:'',
+            uploader:[]
         }
     },
     created (){
@@ -125,10 +135,10 @@ export default {
         onSubmit(values) {
             console.log('submit', values);
         },
-        afterRead(file) {
-            // 此时可以自行将文件上传至服务器
-            this.img = file.file.name;
-        },
+        // afterRead(file) {
+        //     // 此时可以自行将文件上传至服务器
+        //     this.img = file.file.name;
+        // },
         
     }
 }
