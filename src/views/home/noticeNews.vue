@@ -14,7 +14,7 @@
                     <van-cell-group v-for="(item, index) in noticeListData" :key="index">
                         <van-cell :title="item.title" :label="item.createDate">
                             <template #right-icon>
-                              <img :src="item.image" style="height: 80px;" />
+                              <img :src="item.image" style="height: 80px;width:125px;" />
                             </template>
                         </van-cell>
                     </van-cell-group>
@@ -23,7 +23,7 @@
                     <van-cell-group v-for="(item, index) in noticeListData" :key="index">
                         <van-cell :title="item.title" :label="item.createDate">
                             <template #right-icon>
-                              <img :src="item.image" style="height: 80px;" />
+                              <img :src="item.image" style="height: 80px;width:125px;" />
                             </template>
                         </van-cell>
                     </van-cell-group>
