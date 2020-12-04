@@ -23,7 +23,7 @@ data () {
   },
   created () {
     this.initData()
-    this.nowPark = '张江园'
+    this.nowPark = '第一园'
   },
   methods: {
     initData () {

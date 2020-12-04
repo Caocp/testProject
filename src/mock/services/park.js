@@ -4,11 +4,11 @@ import { builder } from '../util'
 const parkDate = [
     {
         value:3,
-        text:'张江园'
+        text:'第一园'
     },
     {
         value:4,
-        text:'三林园'
+        text:'第二园'
     },
 ]
 
